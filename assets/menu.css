@@ -1,0 +1,323 @@
+.page-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  column-gap: clamp(30px, 6vw, 90px);
+  align-items: end;
+  padding: clamp(36px, 5vw, 70px) clamp(22px, 10vw, 150px) clamp(72px, 9vw, 120px);
+}
+
+.page-intro .eyebrow {
+  grid-column: 1 / -1;
+  animation: rise 0.8s 0.1s ease both;
+}
+
+.page-intro h1 {
+  grid-column: 1;
+  max-width: 900px;
+  margin: clamp(16px, 2.5vw, 25px) 0;
+  font: 500 clamp(44px, 7.5vw, 108px) / 0.9 "Playfair Display", serif;
+  letter-spacing: -0.05em;
+  animation: rise 0.8s 0.25s ease both;
+}
+.page-intro h1 em {
+  color: #F2A93B;
+  font-family: "Cormorant Garamond", "Playfair Display", serif;
+  font-weight: 500;
+}
+
+.intro-copy {
+  grid-column: 2;
+  width: 100%;
+  max-width: 460px;
+  margin-bottom: clamp(16px, 2.5vw, 25px);
+  padding-bottom: 6px;
+  padding-left: clamp(16px, 2vw, 28px);
+  border-left: 1px solid rgba(242, 169, 59, 0.45);
+  color: rgba(244, 238, 227, 0.75);
+  font: clamp(15px, 1.4vw, 17px) / 1.7 "DM Sans", sans-serif;
+  animation: rise 0.8s 0.4s ease both;
+}
+
+/* tablets and phones: stack again */
+@media (max-width: 768px) {
+  .page-intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .page-intro h1,
+  .intro-copy {
+    grid-column: 1;
+  }
+  .intro-copy {
+    max-width: 620px;
+    margin-bottom: 0;
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+/* -------- menu section ------ */
+
+.menu-section {
+  padding: clamp(36px, 4vw, 56px) clamp(22px, 10vw, 150px) clamp(60px, 8vw, 110px);
+  background: #F4EEE3;
+  color: #252B29;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------- tabs ---------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.tabs {
+  order: -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(18px, 3vw, 34px);
+  border-bottom: 1px solid rgba(37, 43, 41, 0.15);
+}
+
+.tabs a{
+  position: relative;
+  padding-bottom: 18px;
+  color: rgba(37, 43, 41, 0.6);
+  font: 600 12px "DM Sans", sans-serif;
+  letter-spacing: 0.03em;
+  transition: color 0.3s;
+}
+.tabs a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background: #B8692F;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.tabs a:hover {
+  color: #252B29;
+}
+
+.tabs a:first-child {
+  color: #B8692F;
+}
+
+
+.tabs a:first-child::after {
+  transform: scaleX(1);
+}
+
+#kitchen:target ~ .tabs a:first-child,
+#sweet:target ~ .tabs a:first-child {
+  color: rgba(37, 43, 41, 0.6);
+}
+
+#kitchen:target ~ .tabs a:first-child::after,
+#sweet:target ~ .tabs a:first-child::after {
+  transform: scaleX(0);
+}
+
+
+
+/* the tab of the opened panel is selected */
+#kitchen:target ~ .tabs a[href="#kitchen"],
+#sweet:target ~ .tabs a[href="#sweet"] {
+  color: #B8692F;
+}
+
+#kitchen:target ~ .tabs a[href="#kitchen"]::after,
+#sweet:target ~ .tabs a[href="#sweet"]::after {
+  transform: scaleX(1);
+}
+
+
+.panel {
+  display: none;
+  flex-wrap:wrap;
+  align-items: flex-start;
+  gap: clamp(32px, 6vw, 90px);
+  margin-top: clamp(24px, 4vw, 50px);
+  scroll-margin-top: 220px;
+}
+
+#coffee {
+  display: flex;
+}
+
+#kitchen:target,
+#sweet:target {
+  display: flex;
+}
+#kitchen:target ~ #coffee,
+#sweet:target ~ #coffee {
+  display: none;
+}
+
+/* ------- hidden radio buttons -------- */
+.panel input{
+  display: none;
+}
+
+/* ----- menu list ---------- */
+
+.menu-list {
+  flex: 3 1 380px;
+  list-style: none;
+  padding: 0;
+}
+.menu-item{
+  display: grid;
+  grid-template-columns: clamp(32px, 5vw, 55px) 1fr auto;
+  gap: 10px;
+  padding: clamp(18px, 2.4vw, 26px) 0;
+  border-bottom: 1px solid rgba(37, 43, 41, 0.15);
+  cursor: pointer;
+  animation: fade 0.6s ease both;
+  transition: padding 0.35s ease, background 0.35s ease;
+}
+
+li:nth-child(2) .menu-item {
+  animation-delay: 0.1s;
+}
+
+li:nth-child(3) .menu-item {
+  animation-delay: 0.2s;
+}
+li:nth-child(4) .menu-item {
+  animation-delay: 0.3s;
+}
+.menu-item:hover,
+.pick-1:checked ~ .menu-list .item-1,
+.pick-2:checked ~ .menu-list .item-2,
+.pick-3:checked ~ .menu-list .item-3,
+.pick-4:checked ~ .menu-list .item-4 {
+  padding-left: 16px;
+  background: linear-gradient(90deg, rgba(242, 169, 59, 0.18), transparent);
+}
+
+.menu-number{
+  padding-top: 4px;
+  color: #B8692F;
+  font: 11px "DM Sans", sans-serif;
+}
+
+.menu-item h3{
+  margin-bottom: 7px;
+  font: 500 clamp(20px, 2vw, 24px) "Playfair Display", serif;
+}
+.menu-item p{
+  color: rgba(37, 43, 41, 0.7);
+  font: 13px "DM Sans", sans-serif;
+}
+
+.menu-price {
+  padding-top: 4px;
+  color: #B8692F;
+  font: 500 18px "Cormorant Garamond", serif;
+  white-space: nowrap;
+}
+
+/* ----- Photo + caption --------- */
+
+.menu-aside {
+  flex: 2 1 180px;
+  max-width: 420px;
+}
+.menu-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.18;
+  background: #3E8A8C;
+  overflow: hidden;
+}
+
+/* every photo is hidden, stacked in the same spot */
+.menu-photo img {
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* show only the photo whose number matches the picked radio */
+.pick-1:checked ~ .menu-aside .photo-1,
+.pick-2:checked ~ .menu-aside .photo-2,
+.pick-3:checked ~ .menu-aside .photo-3,
+.pick-4:checked ~ .menu-aside .photo-4 {
+  display: block;
+  animation: wipe 1s ease both;
+}
+
+.menu-aside figcaption {
+  max-width: 270px;
+  margin-top: 16px;
+  color: #B8692F;
+  font: italic 18px / 1.35 "Cormorant Garamond", serif;
+  animation: fade 0.8s 0.5s ease both;
+}
+
+/* ------- animations ---------- */
+
+@keyframes fade {
+  from {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+}
+
+@keyframes wipe {
+  from {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0.4;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+@media (max-width: 360px) {
+
+  .page-intro h1 {
+    font-size: 44px;
+  }
+  .tabs {
+    gap: 16px;
+  }
+  .tabs a {
+    font-size: 11px;
+  }
+
+  .panel {
+    gap: 28px;
+    scroll-margin-top: 120px;
+  }
+  .menu-list {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .menu-item {
+    grid-template-columns: 26px 1fr auto;
+    gap: 8px;
+  }
+  .menu-item h3 {
+    font-size: 18px;
+  }
+  .menu-item p {
+    font-size: 12px;
+  }
+  .menu-price {
+    font-size: 16px;
+  }
+
+  .menu-aside {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

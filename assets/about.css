@@ -1,0 +1,200 @@
+/* ----- shared container ---------- */
+.story-intro,
+.story,
+.values {
+  width: min(1100px, 90%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----- intro ---------- */
+.story-intro{
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  column-gap: clamp(30px, 6vw, 90px);
+  align-items: end;
+  padding: clamp(32px, 5vw, 70px) 0 clamp(64px, 10vw, 140px);
+}
+.story-intro .eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: 20px;
+  animation: rise 0.8s 0.1s ease both;
+}
+
+.story-intro h1 {
+  grid-column: 1;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(42px, 8vw, 96px);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: #F4EEE3;
+  animation: rise 0.8s 0.25s ease both;
+}
+.story-intro h1 em {
+  color: #F2A93B;
+  font-family: "Cormorant Garamond", "Playfair Display", serif;
+  font-style: italic;
+}
+
+.story-intro-copy{
+  grid-column: 2;
+  width: 100%;
+  max-width: 440px;
+  margin: 0;
+  padding-bottom: 6px;
+  padding-left: clamp(16px, 2vw, 28px);
+  border-left: 1px solid rgba(242, 169, 59, 0.45);
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.6;
+  color: rgba(244, 238, 227, 0.75);
+  animation: rise 0.8s 0.4s ease both;
+}
+
+/* tablets and phones: stack again */
+@media (max-width: 768px) {
+  .story-intro {
+    grid-template-columns: 1fr;
+  }
+  .story-intro h1,
+  .story-intro-copy {
+    grid-column: 1;
+  }
+  .story-intro-copy {
+    max-width: 100%;
+    margin-top: clamp(20px, 3vw, 30px);
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+/* -----photo + story -------- */
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 9vw, 127px);
+  align-items: start;
+}
+
+.story-photo {
+  height: clamp(300px, 40vw, 520px);
+  overflow: hidden;
+  background-color: #2B2118;
+}
+.story-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+
+.story-photo:hover img {
+  transform: scale(1.05);
+}
+
+.story-text {
+  padding-top: clamp(0px, 2vw, 30px);
+}
+
+
+.story-text .year {
+  margin-bottom: clamp(20px, 3vw, 35px);
+  font-family: "Cormorant Garamond", "Playfair Display", serif;
+  font-size: clamp(56px, 6vw, 72px);
+  font-style: italic;
+  line-height: 1;
+  color: #F2A93B;
+}
+
+.story-text p {
+  margin-bottom: 25px;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.6;
+  color: rgba(244, 238, 227, 0.75);
+}
+
+.story-text .text-link {
+  margin-top: 10px;
+  color: #F2A93B;
+    font-size: clamp(5px, 1.4vw, 14px);
+  border-color: rgba(242, 169, 59, 0.5);
+}
+
+/* ------- values ---------- */
+.values {
+  margin-top: clamp(80px, 12vw, 180px);
+  padding-bottom: clamp(60px, 8vw, 110px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.5vw, 25px);
+
+}
+.values-heading {
+  grid-column: 1 / -1;
+  margin-bottom: clamp(10px, 2vw, 24px);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #F4EEE3;
+}
+
+.values-heading em {
+  color: #F2A93B;
+  font-family: "Cormorant Garamond", "Playfair Display", serif;
+  font-style: italic;
+}
+.value{
+  padding-top: 28px;
+  border-top: 1px solid rgba(244, 238, 227, 0.15);
+  transition: border-color 0.4s;
+}
+.value:hover {
+  border-top-color: #F2A93B;
+}
+.value-number {
+  font-size: 11px;
+  color: #F2A93B;
+}
+.value h3 {
+  margin: 28px 0 10px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(24px, 2.2vw, 28px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.value p {
+  max-width: 240px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(244, 238, 227, 0.7);
+}
+
+/* ---------- Mobile: values stack ---------- */
+@media (max-width: 700px) {
+  .values {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .value p {
+    max-width: 100%;
+  }
+}
+
+/* ---------phones (360px) ---------- */
+@media (max-width: 360px) {
+  .story-intro h1 {
+    font-size: 42px;
+  }
+
+  .story-photo {
+    height: 260px;
+  }
+
+  .value h3 {
+    font-size: 24px;
+  }
+}
