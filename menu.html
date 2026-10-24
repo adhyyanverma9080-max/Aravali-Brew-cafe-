@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu | Aravali Brew Cafe</title>
+      <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <!-- <link rel="stylesheet" href="assets/menu.css"> -->
+</head>
+
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="./assets/images/logo.png" alt="Aravali Brew Cafe logo" class="brand-mark">
+    <span>ARAVALI<small>BREW CAFE</small></span>
+  </a>
+
+<!--nav-list-->
+  <input type="checkbox" id="nav-list" class="nav-list">
+  <label for="nav-list" class="hamburger" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a class="active" href="menu.html">Menu</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="our-story.html">Our story</a>
+    <a class="nav-cta" href="contact.html">Reserve a table <span>↗</span></a>
+    <!-- language -->
+    <a href="menu-hindi.html" class="language-toggle" lang="hi">
+      <span class="lang-en">EN</span>
+      <span class="lang-divider">|</span>
+      <span class="lang-hi">हिंदी</span>
+    </a>
+  </nav>
+</header>
+  <main>
+
+    <section class="page-intro">
+      <p class="eyebrow">What's brewing</p>
+      <h1>The menu, <em>slowly.</em></h1>
+      <p class="intro-copy">Thoughtful plates, expressive coffee, and a little something sweet. Served all day. Explore our menu of scratch-made dishes, artisanal brews, and house-baked pastries—designed to complement your day at any hour.</p>
+      
+    </section>
+
+
+    <section class="menu-section">
+
+      <!-- kitchen -->
+      <div class="panel" id="kitchen">
+        <input class="pick-1" type="radio" name="kitchen-pick" id="k1" checked>
+        <input class="pick-2" type="radio" name="kitchen-pick" id="k2">
+        <input class="pick-3" type="radio" name="kitchen-pick" id="k3">
+        <input class="pick-4" type="radio" name="kitchen-pick" id="k4">
+
+        <ul class="menu-list">
+          <li><label class="menu-item item-1" for="k1">
+            <span class="menu-number">01</span>
+            <span class="menu-text"><span class="menu-name">Brown Rice & Vegetable Salad</span><span class="menu-desc">Warm Brown Rice & Veggie Bowl, Herb Brown Rice Salad</span></span>
+            <span class="menu-price">₹240</span>
+          </label></li>
+          <li><label class="menu-item item-2" for="k2">
+            <span class="menu-number">02</span>
+            <span class="menu-text"><span class="menu-name">Garlic Cilantro</span><span class="menu-desc">Garlic Coriander Flatbread, Cheese & Herb Pide</span></span>
+            <span class="menu-price">₹210</span>
+          </label></li>
+          <li><label class="menu-item item-3" for="k3">
+            <span class="menu-number">03</span>
+            <span class="menu-text"><span class="menu-name">Pesto Spaghetti</span><span class="menu-desc">Spaghetti Basil Pesto, Creamy Pesto Spaghetti</span></span>
+            <span class="menu-price">₹290</span>
+          </label></li>
+          <li><label class="menu-item item-4" for="k4">
+            <span class="menu-number">04</span>
+            <span class="menu-text"><span class="menu-name">Quinoa Salad</span><span class="menu-desc">Mediterranean Quinoa Salad, Greek Quinoa Bowl.</span></span>
+            <span class="menu-price">₹320</span>
+          </label></li>
+        </ul>
+
+        <figure class="menu-aside">
+          <div class="menu-photo">
+            <img class="photo-1" src="./assets/images/menu/food1.jpg" alt="Brown rice">
+            <img class="photo-2" src="./assets/images/menu/food6.jpg" alt="Garlic cilantro">
+            <img class="photo-3" src="./assets/images/menu/food3.jpg" alt="Pesto Spaghetti">
+            <img class="photo-4" src="./assets/images/menu/food4.jpg" alt="Quino salad">
+          </div>
+          <figcaption>Everything from the kitchen is made fresh, from scratch, every morning.</figcaption>
+        </figure>
+      </div>
+
+      <!-- sweet -->
+      <div class="panel" id="sweet">
+        <input class="pick-1" type="radio" name="sweet-pick" id="s1" checked>
+        <input class="pick-2" type="radio" name="sweet-pick" id="s2">
+        <input class="pick-3" type="radio" name="sweet-pick" id="s3">
+        <input class="pick-4" type="radio" name="sweet-pick" id="s4">
+
+        <ul class="menu-list">
+          <li><label class="menu-item item-1" for="s1">
+            <span class="menu-number">01</span>
+            <span class="menu-text"><span class="menu-name">Mango Smoothie Bowl</span><span class="menu-desc">Smooth mango smoothie base, fresh mango slices arranged in a fan</span></span>
+            <span class="menu-price">₹280</span>
+          </label></li>
+          <li><label class="menu-item item-2" for="s2">
+            <span class="menu-number">02</span>
+            <span class="menu-text"><span class="menu-name">Pancake</span><span class="menu-desc">A tall stack of fluffy golden pancakes layered with chocolate sauce/spread</span></span>
+            <span class="menu-price">₹300</span>
+          </label></li>
+          <li><label class="menu-item item-3" for="s3">
+            <span class="menu-number">03</span>
+            <span class="menu-text"><span class="menu-name">Cheesecake Platters</span><span class="menu-desc">Mini Cheesecake Variety Platter.</span></span>
+            <span class="menu-price">₹240</span>
+          </label></li>
+          <li><label class="menu-item item-4" for="s4">
+            <span class="menu-number">04</span>
+            <span class="menu-text"><span class="menu-name">Dessert Tubs</span><span class="menu-desc">Half-and-Half Dessert Tubs (Classic Tiramisu & Biscoff/Caramel Cream Cake).   </span></span>
+            <span class="menu-price">₹220</span>
+          </label></li>
+        </ul>
+
+        <figure class="menu-aside">
+          <div class="menu-photo">
+            <img class="photo-1" src="./assets/images/menu/food2.jpg" alt="Mango smoothie">
+            <img class="photo-2" src="./assets/images/menu/food14.jpg" alt="Pancake">
+            <img class="photo-3" src="./assets/images/menu/food15.jpg" alt="Cheesecake platter">
+            <img class="photo-4" src="./assets/images/menu/food16.jpg" alt="Dessert tubs">
+          </div>
+          <figcaption>Save room. The best part of the day is usually dessert.</figcaption>
+        </figure>
+      </div>
+
+      <!-- coffee -->
+      <div class="panel" id="coffee">
+        <input class="pick-1" type="radio" name="coffee-pick" id="c1" checked>
+        <input class="pick-2" type="radio" name="coffee-pick" id="c2">
+        <input class="pick-3" type="radio" name="coffee-pick" id="c3">
+        <input class="pick-4" type="radio" name="coffee-pick" id="c4">
+
+        <ul class="menu-list">
+          <li><label class="menu-item item-1" for="c1">
+            <span class="menu-number">01</span>
+            <span class="menu-text"><span class="menu-name">Watermelon Mint Mojito</span><span class="menu-desc">Slow-steeped seasonal single origin</span></span>
+            <span class="menu-price">₹180</span>
+          </label></li>
+          <li><label class="menu-item item-2" for="c2">
+            <span class="menu-number">02</span>
+            <span class="menu-text"><span class="menu-name">Iced Latte</span><span class="menu-desc">House rose, cardamom, double espresso</span></span>
+            <span class="menu-price">₹240</span>
+          </label></li>
+          <li><label class="menu-item item-3" for="c3">
+            <span class="menu-number">03</span>
+            <span class="menu-text"><span class="menu-name">Chocolate Fudge</span><span class="menu-desc">Raw jaggery, cinnamon, velvety milk</span></span>
+            <span class="menu-price">₹220</span>
+          </label></li>
+          <li><label class="menu-item item-4" for="c4">
+            <span class="menu-number">04</span>
+            <span class="menu-text"><span class="menu-name">Gourmet Hot Chocolate</span><span class="menu-desc">18-hour steep, tonic</span></span>
+            <span class="menu-price">₹260</span>
+          </label></li>
+        </ul>
+
+        <figure class="menu-aside">
+          <div class="menu-photo">
+            <img class="photo-1" src="./assets/images/menu/drink1.jpg" alt="Watermelon mint">
+            <img class="photo-2" src="./assets/images/menu/drink2.jpg" alt="Iced Latte">
+            <img class="photo-3" src="./assets/images/menu/drink3.jpg" alt="Chocolate fudge">
+            <img class="photo-4" src="./assets/images/menu/drink4.jpg" alt="Gourmet hot chocolate">
+          </div>
+          <figcaption>Our menu follows the seasons — ask us what's new at the bar.</figcaption>
+        </figure>
+      </div>
+
+      <div class="tabs">
+        <a href="#coffee">Drinks</a>
+        <a href="#kitchen">From the kitchen</a>
+        <a href="#sweet">Something sweet</a>
+      </div>
+
+    </section>
+
+  </main>
+<!-- footer -->
+  
+  <footer class="site-footer">
+    <div class="footer-top">
+
+      <div class="footer-col footer-about">
+        <a class="brand" href="index.html">
+          <img src="./assets/images/logo.png" alt="Aravali Brew Cafe logo" class="brand-mark">
+          <span>ARAVALI<small>BREW CAFE</small></span>
+        </a>
+        <p>Good coffee. Slow moments.<br>Made with care in Ajmer.</p>
+        <a class="footer-social" href="https://www.instagram.com/aravalibrews/" target="_blank" rel="noreferrer">
+          <i class="fab fa-instagram fa-1.5x"></i>Follow us on Instagram
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="our-story.html">Our story</a>
+          <a href="contact.html">Reserve a table</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Visit us</h4>
+        <p><i class="fa-solid fa-location-dot"></i> Aravali Brew Cafe,<br>Ajmer, Rajasthan</p>
+        <p><i class="fa-solid fa-mug-hot"></i> Walk-ins always welcome</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Opening hours</h4>
+        <p><span>Mon – Fri</span> 8:00 AM – 10:00 PM</p>
+        <p><span>Sat – Sun</span> 8:00 AM – 11:00 PM</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-tag">Brewed slowly · Since 2017</span>
+      <span>© 2026 Aravali Brew Cafe. All rights reserved.</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
