@@ -904,80 +904,159 @@ li:nth-child(4) .menu-item {
   }
 }/* -------- print-friendly menu -------- */
 @media print {
-  @page { margin: 14mm; }
+  @page { size: A4; margin: 16mm; }
 
-  * {
-    animation: none;
-    transition: none;
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
-  body,
-  .page-intro,
-  .menu-section {
-    background: #fff;
-    color: #000;
+  body, .page-intro, .menu-section {
+    background: #fff !important;
+    color: #000 !important;
   }
 
-  .page-intro {
-    display: block;
-    padding: 0 0 16px;
-  }
-  .page-intro h1 { 
-    font-size: 40px;
-     margin: 8px 0; 
-    }
-  .intro-copy {
-    max-width: none;
-    padding-left: 12px;
-    color: #333;
-  }
-
-  .menu-section { 
-    padding: 0; 
-  }
-
-  /* hide interactive and decorative parts */
+  /* hide navigation, tabs, photos, footer */
+  .site-header,
+  .main-nav,
+  .hamburger,
   .tabs,
   .menu-aside,
-  nav,
-  header,
-  footer { 
-    display: none; 
+  .site-footer {
+    display: none !important;
   }
 
+  /* intro */
+  .page-intro {
+    display: block;
+    padding: 0 0 14px;
+    border-bottom: 2px solid #000;
+  }
+  .page-intro .eyebrow {
+    color: #555 !important;
+    font-size: 9pt;
+  }
+  .page-intro h1 {
+    max-width: none;
+    margin: 4px 0 8px;
+    font-size: 30pt;
+    line-height: 1.1;
+    letter-spacing: 0;
+    color: #000;
+  }
+  .page-intro h1 em {
+    color: #7a4a1c !important;
+  }
+  .intro-copy {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #333 !important;
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+
+  /* menu area: coffee first, then kitchen, then sweet */
+  .menu-section {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  #coffee  { order: 1; }
+  #kitchen { order: 2; }
+  #sweet   { order: 3; }
   .panel,
   #coffee,
   #kitchen,
   #sweet,
   #kitchen:target ~ #coffee,
   #sweet:target ~ #coffee {
-    display: block;
-    margin-top: 20px;
+    display: block !important;
+    margin-top: 18px;
+    gap: 0;
+    break-inside: avoid;
   }
 
+  .panel::before {
+    display: block;
+    width: 100%;
+    break-after: avoid;
+  }
+
+  /* section title */
+  .panel::before {
+    content: attr(data-title);
+    display: block;
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #7a4a1c;
+    color: #7a4a1c;
+    font: 600 11pt "DM Sans", sans-serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+    .menu-list {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex: none;
+  }
+
+  /* items */
   .menu-item,
   .menu-item:hover,
   .pick-1:checked ~ .menu-list .item-1,
   .pick-2:checked ~ .menu-list .item-2,
   .pick-3:checked ~ .menu-list .item-3,
   .pick-4:checked ~ .menu-list .item-4 {
-    padding: 10px 0;
+    padding: 7px 0;
     background: none;
+    border-bottom: 1px dotted #999;
     break-inside: avoid;
     cursor: auto;
+    opacity: 1;
+    transform: none;
   }
-  .menu-item p { 
-    color: #333; 
+  .menu-number { 
+    color: #7a4a1c; 
+    font-size: 9pt; 
+  }
+  .menu-name   
+  { 
+    margin-bottom: 2px; 
+    font-size: 13pt; 
+    color: #000; 
+  }
+  .menu-desc   
+  { 
+    font-size: 9pt; 
+    color: #444 !important;
+   }
+  .menu-price  { 
+    color: #000;
+     font-size: 13pt; 
+     font-weight: 600; 
+    }
+
+  /* simple footer line */
+  .menu-section::after {
+    content: "Aravali Brew Cafe · Ajmer, Rajasthan · aravalibrews";
+    order: 4;
+    margin-top: 24px;
+    padding-top: 8px;
+    border-top: 1px solid #999;
+    color: #555;
+    font-size: 9pt;
+    text-align: center;
   }
 
-  a { 
-    color: inherit; 
-    text-decoration: none; 
-  }
+  a { color: inherit; text-decoration: none; }
 }
-
 
 /* -------- Gallery ---------- */
   /* ---- shared container ---------- */
@@ -1282,25 +1361,25 @@ li:nth-child(4) .menu-item {
     padding-left: 0;
     border-left: 0;
   }
-}
-/* Hindi story intro: copy starts at the top, next to the heading */
+
 .story-intro-hi {
   align-items: start;
 }
 
 .story-intro-hi h1 {
-  line-height: 1.25;      /* Devanagari needs more line height; also fixes the overlapping lines */
+  line-height: 1.25;      
   letter-spacing: 0;
   font-size: clamp(40px, 6.5vw, 76px);
 }
 
 .story-intro-hi h1 em {
-  font-style: normal;     /* italic Devanagari looks slanted/distorted */
+  font-style: normal;     
 }
 
 .story-intro-hi .story-intro-copy {
   margin-top: clamp(8px, 1.5vw, 20px);
   line-height: 1.8;
+}
 }
 /* -----photo + story -------- */
 .story {
@@ -1327,15 +1406,15 @@ li:nth-child(4) .menu-item {
   transform: scale(1.05);
 }
 .story-text {
-  padding-top: 0;                      /* was clamp(0px, 2vw, 30px) */
+  padding-top: 0;                    
 }
 
 .story-text .year {
-  margin-bottom: clamp(12px, 2vw, 20px);   /* was clamp(20px, 3vw, 35px) */
+  margin-bottom: clamp(12px, 2vw, 20px);   
   font-family: "Cormorant Garamond", "Playfair Display", serif;
   font-size: clamp(56px, 6vw, 72px);
   font-style: italic;
-  line-height: 0.9;                    /* was 1, trims the invisible space above the numbers */
+  line-height: 0.9;                   
   color: #F2A93B;
 }
 
@@ -1355,7 +1434,7 @@ li:nth-child(4) .menu-item {
 
 /* ------- values ---------- */
 .values {
-  margin-top: clamp(28px, 4vw, 48px);   /* was clamp(80px, 12vw, 180px) */
+  margin-top: clamp(28px, 4vw, 48px);  
   padding-bottom: clamp(60px, 8vw, 110px);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1404,7 +1483,7 @@ li:nth-child(4) .menu-item {
   line-height: 1.5;
   color: rgba(244, 238, 227, 0.7);
 }
-/* ------- divider between story and values ---------- */
+/* ------- divider----- */
 .story-divider {
   width: min(1100px, 90%);
   height: 1px;
@@ -1418,7 +1497,7 @@ li:nth-child(4) .menu-item {
   );
 }
 
-/* ---------- Mobile: values stack ---------- */
+/* ---------- Mobile------- */
 @media (max-width: 700px) {
   .values {
     grid-template-columns: 1fr;
@@ -1593,7 +1672,6 @@ li:nth-child(4) .menu-item {
   border-radius: 30px;
 }
 
-/* thin amber line along the top edge */
 .form-card::before {
   content: "";
   position: absolute;
@@ -1651,7 +1729,6 @@ li:nth-child(4) .menu-item {
   box-shadow: 0 0 0 3px rgba(242, 169, 59, 0.12);
 }
 
-/* stops the browser's white/yellow autofill background */
 .field input:-webkit-autofill {
   -webkit-text-fill-color: #F7F2E8;
   -webkit-box-shadow: 0 0 0 1000px #2A322F inset;
