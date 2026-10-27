@@ -4,9 +4,6 @@ A bilingual (English and Hindi), fully responsive website for **Aravali Brew Caf
 
 🔗 **Live site:** https://adhyyanverma9080-max.github.io/Aravali-Brew-cafe-/
 
----
-
-## 📸 Preview
 
 <!-- Add screenshots to assets/images/ and uncomment the lines below -->
 <!-- ![Home page](assets/images/screenshot-home.png) -->
