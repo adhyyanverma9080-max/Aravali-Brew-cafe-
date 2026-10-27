@@ -1,6 +1,3 @@
-# Aravali-Brew-cafe
-https://adhyyanverma9080-max.github.io/Aravali-Brew-cafe-/
-
 # ☕ Aravali Brew Cafe
 
 A bilingual (English and Hindi), fully responsive website for **Aravali Brew Cafe**, a specialty coffee cafe in Ajmer, Rajasthan. Built with plain HTML and CSS, with no frameworks and no JavaScript.
